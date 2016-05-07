@@ -48,14 +48,14 @@ TODO:
 
 ## Built-in dev tools
 
-If you want you fully fonctionnal, just type in your favorite term: `npm install`
+If you want your app fully fonctionnal, just type in your favorite term: `npm install`
 
 That's it :D !
 
 To launch the server : `npm start`
 To launch tests : `npm test`
 
-more is comming ... ;)
+more are comming ... ;)
 
 ### Front-end
 
