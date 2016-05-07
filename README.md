@@ -9,7 +9,7 @@ TODO:
 
 - [ ] complete gulp tasks
 - [ ] add default code to te default module
-- [ ] make the app.js works :D
+- [x] make the app.js works :D
 - [ ] improve my english
 - [ ] improve my git skills
 
@@ -18,24 +18,23 @@ TODO:
 ```
  .
  |
+ +-- app
+ |    |
+ |    +-- config              // App config files
+ |    +-- modules             // Most important folder :D app logic goes here
+ |         |
+ |         +-- default        // default controller, serve the '/' URL of your app
+ |             |
+ |             +-- controller // logic of the module
+ |             +-- view       // views  (are you kidding ... ?)
+ |             +-- model      // models (really dude, I'll be lost without your explanations...)
+ |
  +-- assets                   // Dev files; compiled to the public folder (.sass, .coffee...)
  |    |
  |    +-- sass
  |    +-- js
  |
  +-- bin
- +-- app
- |    |
- |    +-- config              // App config files
- |    +-- modules             // Most important folder :D app logic goes here
- |    |    |
- |    |    +-- default        // default controller, serve the '/' URL of your app
- |    |        |
- |    |        +-- controller // logic of the module
- |    |        +-- view       // views  (are you kidding ... ?)
- |    |        +-- model      // models (really dude, I'll be lost without your explanations...)
- |
- |
  +-- public                   // public files, can be accessed by a brower
  |    |
  |    +-- res                 // img, fonts, etc...
