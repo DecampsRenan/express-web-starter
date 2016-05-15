@@ -4,21 +4,29 @@
  * Should list and launch all
  * routes defined in controller's folder.
  */
-let fs      = require('fs');
-let express = require('express');
-let app = express();
 
-const controllersPath = `${__dirname}/app/modules`;
+const appRoot = __dirname + '/app';
 
-// 1. On récupère l'ensemble des dossiers du dossier controller
-let controllers = fs.readdirSync(controllersPath);
+const fs  = require('fs');
+const app = require(`${appRoot}/core`);
 
-// 2. Pour chaque controller, on ajoute la route correspondante
-//    à l'application.
-for ( controller of controllers ) {
-  subModule = require(`${controllersPath}/${controller}`);
-  app.use(subModule.endpoint, subModule.router);
+// 1. Get the controllers defined in the controller folder
+const controllersPath = `${appRoot}/modules`;
+const controllers     = fs.readdirSync(controllersPath);
+
+// 2. For each controller, we mount the exported path to the main app
+for ( controller of controllers) {
+  
+  /* Get the index.js file exporting the config of the submodule */
+  const subModule = require(`${controllersPath}/${controller}`);
+  
+  /* Define the views folder */
+  subModule.app.set('views', `${controllersPath}/${controller}/views`);
+  
+  /* Mount the subModule to the main app at the specified endpoint */
+  app.use(subModule.mountpoint, subModule.app);
+  
+  console.log(`Mounting [${controller}] controller on [${subModule.mountpoint}]`);
 }
-
 
 module.exports = app;

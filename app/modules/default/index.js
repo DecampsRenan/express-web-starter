@@ -1,12 +1,16 @@
-let index = require('express').Router();
+/**
+ * Here is a file considered as a router;
+ * bind your route with .get / .post / etc ... to your controllers method for more flexibility.
+ * 
+ * Take a look to this example to see how it works.
+ */
 
-// Point d'accès de l'application
-const endpoint = '/'
+const DefaultController = require('./controllers/DefaultController');
 
-index.get('/', (req, res) => {
-  res.send('Coucoud de l\'index :D');
+const defaultController = new DefaultController('/');
+
+defaultController.add('get', '/', (req, res) => {
+  res.render('default', { title: 'My Awesome App', message: 'See ? <br/>It works :D !' });
 });
 
-// Convention naming for easy inclusion with the MainController
-module.exports.endpoint = endpoint;
-module.exports.router   = index;
+module.exports = defaultController;
