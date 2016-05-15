@@ -90,12 +90,12 @@ Here are usefull middlewares included:
 
 ### Gulp tasks
 
-| Gulp command            | Task(s)                             | Implemented? |
-| ----------------------- | ----------------------------------- |: ---------- :|
-| `gulp`                  | - compile & minify CSS (watch mode) |     [ ]      |
-| `gulp sass`             | - compile sass and minify           |     [x]      |
-| `gulp sass:watch`       | - compile sass (watch mode)         |     [x]      |
-| `gulp dist`             | - make a distributable of the app   |     [ ]      |
+| Gulp command            | Task(s)                             | Implemented?       |
+|-------------------------|-------------------------------------|:------------------:|
+| `gulp`                  | - compile & minify CSS (watch mode) | :construction:     |
+| `gulp sass`             | - compile sass and minify           | :white_check_mark: |
+| `gulp sass:watch`       | - compile sass (watch mode)         | :white_check_mark: |
+| `gulp dist`             | - make a distributable of the app   | :construction:	 |
 
 Extensions:
 
